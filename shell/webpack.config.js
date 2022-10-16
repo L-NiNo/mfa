@@ -29,8 +29,7 @@ module.exports = {
         library: { type: "module" },
 
         remotes: {
-            rm1: "http://localhost:7000/remoteEntry.js",
-
+            "rm1": "http://localhost:4201/remoteEntry.js",
         },
 
         shared: share({

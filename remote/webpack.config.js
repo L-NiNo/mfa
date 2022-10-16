@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "rm1",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false
@@ -21,25 +22,19 @@ module.exports = {
       ...sharedMappings.getAliases(),
     }
   },
-  experiments: {
-    outputModule: true
-  },
+  // experiments: {
+  //   outputModule: true
+  // },
   plugins: [
     new ModuleFederationPlugin({
-      library: {type: "module"},
+      // library: {type: "module"},
 
       // For remotes (please adjust)
       name: "rm1",
       filename: "remoteEntry.js",
       exposes: {
-        "./Module": "./src/app/app.module.ts"
+        "./Module": "./remote/src/app/mod-fed/mod-fed.module.ts"
       },
-
-      // For hosts (please adjust)
-      // remotes: {
-      //     "mfe1": "http://localhost:3000/remoteEntry.js",
-
-      // },
 
       shared: share({
         "@angular/core": {singleton: true, strictVersion: true, requiredVersion: 'auto'},
