@@ -1,13 +1,13 @@
 {
-  "name": "remote",
+  "name": "shell",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "ng": "shell/node_modules/.bin/ng",
+    "start": "shell/node_modules/.bin/ng serve",
+    "build": "shell/node_modules/.bin/ng build",
+    "watch": "shell/node_modules/.bin/ng build --watch --configuration development",
+    "test": "shell/node_modules/.bin/ng test",
+    "run:all": "node shell/node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/router": "^14.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "webpack": "^5.74.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
