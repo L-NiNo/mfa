@@ -1,0 +1,5 @@
+FROM nginx:latest
+COPY ./dist/remote /usr/share/nginx/html
+COPY ./remote.conf /etc/nginx/conf.d/default.conf
+EXPOSE 4201
+

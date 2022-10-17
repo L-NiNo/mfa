@@ -16,7 +16,8 @@ const routes: Routes = [
   {
     path:"remote",
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      // remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteEntry: 'remote/remoteEntry.js',
       remoteName: 'rm1',
       exposedModule: './Module'
     }).then(m => m.ModFedModule)

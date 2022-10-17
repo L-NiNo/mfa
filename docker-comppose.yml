@@ -1,0 +1,13 @@
+services:
+  shell-app:
+    build:
+      dockerfile: Dockerfile
+    ports:
+     - '80:80'
+#     - '4200:80'
+
+  remote-app:
+    build:
+      dockerfile: Dockerfile-remote
+#    ports:
+#      - '4201:80'
